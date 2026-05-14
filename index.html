@@ -2,626 +2,550 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>📚 BookWriter Pro · Accurate Views</title>
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>📚 BookWriter Pro · Unlimited Boost (No Quota Error)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <!-- Flag Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.11.0/css/flag-icons.min.css">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
       --primary: #8b5cf6;
-      --primary-dark: #7c3aed;
+      --primary-dark: #6d28d9;
       --primary-light: #a78bfa;
-      --secondary: #c084fc;
-      --accent: #f472b6;
+      --secondary: #f43f5e;
       --bg: #faf5ff;
       --card: #ffffff;
       --text: #1e1b4b;
       --text-light: #6b7280;
       --border: #e9d5ff;
       --success: #10b981;
-      --warning: #f59e0b;
-      --danger: #ef4444;
-      --shadow: 0 10px 40px rgba(139, 92, 246, 0.08);
-      --shadow-hover: 0 20px 50px rgba(139, 92, 246, 0.15);
-      --gradient: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 50%, #c084fc 100%);
+      --gradient: linear-gradient(135deg, #8b5cf6 0%, #c084fc 100%);
+      --shadow: 0 20px 35px -10px rgba(139, 92, 246, 0.2);
     }
-    body { font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-    .fade-in { animation: fadeIn 0.4s ease; }
-    .navbar { background: var(--card); padding: 1rem 2rem; box-shadow: var(--shadow); display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; border-bottom: 3px solid var(--primary-light); }
-    .nav-brand { font-size: 1.7rem; font-weight: 700; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: flex; align-items: center; gap: 0.5rem; }
-    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
-    .nav-links a { text-decoration: none; color: var(--text); font-weight: 500; cursor: pointer; padding: 0.5rem 1rem; border-radius: 30px; transition: all 0.2s; }
-    .nav-links a:hover, .nav-links a.active { background: var(--primary-light); color: white; }
-    .user-badge { background: var(--gradient); color: white; padding: 0.4rem 1.2rem; border-radius: 40px; font-size: 0.9rem; display: flex; align-items: center; gap: 0.8rem; box-shadow: var(--shadow); }
-    .user-badge button { background: rgba(255,255,255,0.2); border: none; color: white; cursor: pointer; padding: 0.2rem 0.5rem; border-radius: 20px; }
-    .btn-primary { background: var(--gradient); color: white; border: none; padding: 0.8rem 2rem; border-radius: 40px; font-weight: 600; cursor: pointer; transition: all 0.3s; box-shadow: var(--shadow); }
-    .btn-primary:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
-    .btn-secondary { background: transparent; color: var(--primary); border: 2px solid var(--primary); padding: 0.6rem 1.5rem; border-radius: 40px; font-weight: 600; cursor: pointer; }
-    .btn-secondary:hover { background: var(--primary); color: white; }
-    .btn-outline { background: white; color: var(--text); border: 1px solid var(--border); padding: 0.5rem 1.2rem; border-radius: 40px; cursor: pointer; }
-    .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
-    .btn-danger { background: var(--danger); color: white; border: none; padding: 0.5rem 1rem; border-radius: 20px; cursor: pointer; }
+    body { font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--text); }
+    .navbar { background: var(--card); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; box-shadow: var(--shadow); border-bottom: 3px solid var(--primary); }
+    .nav-brand { font-size: 1.8rem; font-weight: 800; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: flex; align-items: center; gap: 0.5rem; }
+    .nav-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .nav-links a { text-decoration: none; color: var(--text); font-weight: 600; padding: 0.5rem 1.2rem; border-radius: 40px; transition: all 0.2s; cursor: pointer; }
+    .nav-links a:hover, .nav-links a.active { background: var(--primary); color: white; box-shadow: 0 4px 10px rgba(139,92,246,0.3); }
+    .user-badge { background: var(--gradient); color: white; padding: 0.4rem 1.2rem; border-radius: 40px; display: flex; align-items: center; gap: 1rem; font-weight: 500; }
+    .user-badge button { background: rgba(255,255,255,0.2); border: none; color: white; padding: 0.3rem 0.8rem; border-radius: 30px; cursor: pointer; font-weight: 600; }
+    .btn-primary { background: var(--gradient); color: white; border: none; padding: 0.8rem 2rem; border-radius: 50px; font-weight: 700; cursor: pointer; transition: 0.2s; box-shadow: 0 5px 15px rgba(139,92,246,0.3); }
+    .btn-primary:hover { transform: translateY(-2px); filter: brightness(1.05); }
+    .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); padding: 0.5rem 1.2rem; border-radius: 40px; font-weight: 600; cursor: pointer; }
+    .btn-danger { background: #ef4444; color: white; border: none; padding: 0.5rem 1rem; border-radius: 30px; cursor: pointer; }
     .setup-container { display: flex; justify-content: center; align-items: center; min-height: 100vh; background: var(--gradient); }
-    .setup-card { background: white; padding: 3rem; border-radius: 40px; box-shadow: 0 30px 60px rgba(0,0,0,0.2); max-width: 450px; text-align: center; animation: fadeIn 0.5s ease; }
-    .setup-card h1 { font-size: 2.5rem; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.5rem; }
-    .country-selector { display: flex; align-items: center; gap: 0.5rem; background: var(--bg); padding: 0.5rem 1rem; border-radius: 40px; border: 2px solid var(--border); }
-    .country-selector select { background: transparent; border: none; font-size: 1rem; padding: 0.5rem; width: 100%; font-family: inherit; }
+    .setup-card { background: white; padding: 3rem; border-radius: 50px; max-width: 450px; text-align: center; box-shadow: 0 30px 50px rgba(0,0,0,0.2); }
     .container { max-width: 1300px; margin: 2rem auto; padding: 0 1.5rem; }
-    .stat-card { background: var(--card); border-radius: 20px; padding: 1.5rem; box-shadow: var(--shadow); border: 1px solid var(--border); }
     .books-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
-    .book-card { background: var(--card); border-radius: 20px; padding: 1.5rem; box-shadow: var(--shadow); border: 1px solid var(--border); transition: all 0.3s; }
-    .book-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
-    .book-card h3 { margin-bottom: 0.5rem; color: var(--primary-dark); }
-    .book-card .meta { color: var(--text-light); font-size: 0.9rem; margin-bottom: 0.5rem; }
-    .stats-badge { display: flex; gap: 1rem; margin: 0.8rem 0; font-size: 0.85rem; color: var(--text-light); }
-    .stats-badge i { margin-right: 0.3rem; color: var(--primary); }
-    .status { display: inline-block; padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-bottom: 1rem; }
+    .book-card { background: var(--card); border-radius: 28px; padding: 1.5rem; box-shadow: var(--shadow); border: 1px solid var(--border); transition: all 0.3s; }
+    .book-card:hover { transform: translateY(-5px); }
+    .stats-badge { display: flex; gap: 1.5rem; margin: 1rem 0; font-size: 0.9rem; background: var(--bg); padding: 0.5rem 1rem; border-radius: 40px; width: fit-content; }
+    .status { display: inline-block; padding: 0.3rem 1rem; border-radius: 30px; font-size: 0.8rem; font-weight: 600; margin-bottom: 1rem; }
     .status.published { background: #d1fae5; color: #065f46; }
-    .status.draft { background: #fef3c7; color: #92400e; }
-    .status.scheduled { background: #dbeafe; color: #1e40af; }
-    .form-group { margin-bottom: 1.5rem; }
-    .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text); }
-    .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 0.9rem 1.2rem; border: 2px solid var(--border); border-radius: 20px; font-size: 1rem; font-family: inherit; background: white; transition: all 0.2s; }
-    .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1); }
     .analytics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 2rem; }
-    .analytics-card { background: var(--card); border-radius: 20px; padding: 1.5rem; box-shadow: var(--shadow); border: 1px solid var(--border); text-align: center; }
-    .analytics-card i { font-size: 2rem; color: var(--primary); margin-bottom: 0.5rem; }
-    .analytics-card h3 { font-size: 2rem; color: var(--primary-dark); }
-    .country-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
-    .country-table th, .country-table td { padding: 0.8rem; text-align: left; border-bottom: 1px solid var(--border); }
-    .country-table tr:hover { background: var(--bg); }
-    .fi { margin-right: 0.5rem; border-radius: 4px; }
-    .search-box { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; }
-    .search-box input { flex: 1; padding: 0.9rem 1.2rem; border: 2px solid var(--border); border-radius: 40px; font-size: 1rem; }
-    .page-navigation { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
-    #pageIndicator { font-weight: 600; color: var(--primary); }
-    .page-content-card { background: white; border-radius: 20px; padding: 2.5rem; box-shadow: var(--shadow); min-height: 400px; border: 1px solid var(--border); }
-    .admin-badge { background: linear-gradient(135deg, #fbbf24, #f59e0b); color: white; padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.7rem; font-weight: 600; margin-left: 0.5rem; }
-    .admin-section { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 20px; padding: 1.5rem; margin-bottom: 2rem; border: 2px solid #fbbf24; }
+    .analytics-card { background: var(--card); border-radius: 28px; padding: 1.5rem; text-align: center; box-shadow: var(--shadow); }
+    .analytics-card i { font-size: 2.2rem; color: var(--primary); margin-bottom: 0.5rem; }
+    .analytics-card h3 { font-size: 2rem; font-weight: 800; color: var(--primary-dark); }
+    .admin-section { background: linear-gradient(135deg, #fef3c7, #fde68a); border-radius: 28px; padding: 1.5rem; margin-bottom: 2rem; border: 2px solid #fbbf24; }
+    .boost-panel { background: linear-gradient(145deg, #ffffff, #faf5ff); border-radius: 32px; padding: 1.8rem; margin: 1.5rem 0; border: 1px solid var(--border); }
+    .preset-buttons { display: flex; flex-wrap: wrap; gap: 0.8rem; margin: 1.2rem 0; justify-content: center; }
+    .preset-btn { background: var(--primary-light); color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 40px; font-weight: 700; cursor: pointer; transition: 0.1s; font-size: 0.9rem; }
+    .preset-btn:hover { background: var(--primary); transform: scale(1.02); }
+    .inject-box { background: white; border-radius: 24px; padding: 1.2rem; margin-top: 1rem; border-left: 6px solid var(--primary); }
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.8rem 1.2rem; border: 2px solid var(--border); border-radius: 30px; font-family: inherit; }
     .hidden { display: none !important; }
-    .error { color: var(--danger); margin: 1rem 0; }
-    .view-stats { display: flex; justify-content: space-around; background: var(--bg); padding: 0.8rem; border-radius: 15px; margin: 1rem 0; }
-    .view-stats div { text-align: center; }
-    .view-stats i { color: var(--primary); margin-right: 0.3rem; }
-    @media (max-width: 768px) {
-      .navbar { flex-direction: column; gap: 1rem; }
-      .analytics-grid { grid-template-columns: repeat(2, 1fr); }
-      .books-grid { grid-template-columns: 1fr; }
-    }
+    .toast-success { position: fixed; bottom: 20px; right: 20px; background: #10b981; color: white; padding: 12px 24px; border-radius: 40px; z-index: 1000; font-weight: 600; box-shadow: 0 5px 15px rgba(0,0,0,0.2); animation: fadeOut 3s forwards; }
+    @keyframes fadeOut { 0% { opacity: 1; } 70% { opacity: 1; } 100% { opacity: 0; visibility: hidden; } }
+    @media (max-width: 768px) { .analytics-grid { grid-template-columns: 1fr 1fr; } }
   </style>
 </head>
 <body>
-  <div id="app">
-    <!-- SETUP VIEW -->
-    <div id="setupView" class="setup-container">
-      <div class="setup-card">
-        <h1>📚 BookWriter Pro</h1>
-        <p style="color: var(--text-light); margin-bottom: 1.5rem;"><i class="fas fa-globe"></i> Write, Publish & Track Views</p>
-        <form id="setupForm">
-          <div class="form-group"><label><i class="fas fa-user"></i> Your Username</label><input type="text" id="setupUsername" placeholder="e.g., Jenish Subedi" required minlength="3"></div>
-          <div class="form-group"><label><i class="fas fa-flag"></i> Your Country</label><div class="country-selector"><i class="fas fa-map-pin" style="color: var(--primary);"></i><select id="setupCountry" required></select></div></div>
-          <div id="setupError" class="error"></div>
-          <button type="submit" class="btn-primary" style="width: 100%;"><i class="fas fa-arrow-right"></i> Continue</button>
-        </form>
-        <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-light);"><i class="fas fa-shield-alt"></i> Admin: Jenish Subedi</p>
-      </div>
-    </div>
-
-    <!-- MAIN LAYOUT -->
-    <div id="mainLayout" class="hidden">
-      <nav class="navbar">
-        <div class="nav-brand"><i class="fas fa-book-open"></i> BookWriter Pro</div>
-        <div class="nav-links">
-          <a id="navLibrary"><i class="fas fa-compass"></i> Explore</a>
-          <a id="navDashboard"><i class="fas fa-pen-fancy"></i> My Books</a>
-          <a id="navAnalytics"><i class="fas fa-chart-bar"></i> Analytics</a>
-          <a id="navAdmin" class="hidden"><i class="fas fa-crown"></i> Admin</a>
-        </div>
-        <div class="user-badge">
-          <span id="currentUsername"></span>
-          <span id="userFlag" class="fi" style="width: 1.5rem;"></span>
-          <button id="changeUserBtn" title="Change user"><i class="fas fa-sign-out-alt"></i></button>
-        </div>
-      </nav>
-
-      <!-- DASHBOARD VIEW -->
-      <div id="dashboardView" class="container hidden">
-        <div class="dashboard-header"><h1><i class="fas fa-pen-fancy" style="color: var(--primary);"></i> My Books</h1><button id="createBookBtn" class="btn-primary"><i class="fas fa-plus"></i> New Book</button></div>
-        <div class="search-box"><input type="text" id="bookSearch" placeholder="🔍 Search your books..."></div>
-        <div id="booksList" class="books-grid"></div>
-      </div>
-
-      <!-- LIBRARY VIEW -->
-      <div id="libraryView" class="container hidden">
-        <h1><i class="fas fa-compass" style="color: var(--primary);"></i> Discover Books</h1>
-        <div class="search-box"><input type="text" id="librarySearch" placeholder="🔍 Search by title or author..."></div>
-        <div id="libraryBooks" class="books-grid"></div>
-      </div>
-
-      <!-- ANALYTICS VIEW -->
-      <div id="analyticsView" class="container hidden">
-        <h1><i class="fas fa-chart-line" style="color: var(--primary);"></i> Your Analytics</h1>
-        <div class="analytics-grid">
-          <div class="analytics-card"><i class="fas fa-eye"></i><h3 id="totalViews">0</h3><p>Total Views</p></div>
-          <div class="analytics-card"><i class="fas fa-download"></i><h3 id="totalDownloads">0</h3><p>PDF Downloads</p></div>
-          <div class="analytics-card"><i class="fas fa-book"></i><h3 id="totalBooks">0</h3><p>Books Published</p></div>
-          <div class="analytics-card"><i class="fas fa-globe"></i><h3 id="uniqueCountries">0</h3><p>Countries Reached</p></div>
-        </div>
-        <div class="stat-card"><h3><i class="fas fa-flag"></i> Views by Country</h3><table class="country-table" id="countryStatsTable"><thead><tr><th>Country</th><th>Views</th><th>Downloads</th></tr></thead><tbody id="countryStatsBody"></tbody></table></div>
-        <div class="stat-card" style="margin-top: 1.5rem;"><h3><i class="fas fa-book"></i> Book Performance</h3><div id="bookPerformanceList"></div></div>
-      </div>
-
-      <!-- ADMIN VIEW -->
-      <div id="adminView" class="container hidden">
-        <div class="admin-section"><h1><i class="fas fa-crown" style="color: #f59e0b;"></i> Admin Dashboard</h1><p>Welcome, Jenish Subedi · System Administrator</p></div>
-        <div class="analytics-grid">
-          <div class="analytics-card"><i class="fas fa-users"></i><h3 id="adminTotalUsers">0</h3><p>Total Users</p></div>
-          <div class="analytics-card"><i class="fas fa-book-open"></i><h3 id="adminTotalBooks">0</h3><p>Total Books</p></div>
-          <div class="analytics-card"><i class="fas fa-eye"></i><h3 id="adminTotalViews">0</h3><p>Total Views</p></div>
-          <div class="analytics-card"><i class="fas fa-download"></i><h3 id="adminTotalDownloads">0</h3><p>Total Downloads</p></div>
-        </div>
-        <div class="stat-card"><h3><i class="fas fa-globe"></i> Global View Distribution</h3><table class="country-table" id="adminCountryTable"><thead><tr><th>Country</th><th>Views</th><th>Users</th><th>Books</th></tr></thead><tbody id="adminCountryBody"></tbody></table></div>
-        <div class="stat-card" style="margin-top: 1.5rem;"><h3><i class="fas fa-chart-pie"></i> Top Performing Books</h3><div id="adminTopBooks"></div></div>
-        <div class="stat-card" style="margin-top: 1.5rem;"><h3><i class="fas fa-history"></i> Recent Activity</h3><div id="recentActivity"></div></div>
-      </div>
-
-      <!-- EDITOR VIEW -->
-      <div id="editorView" class="container hidden">
-        <form id="bookForm">
-          <div class="form-group"><label><i class="fas fa-heading"></i> Book Title</label><input type="text" id="bookTitle" required></div>
-          <h3><i class="fas fa-file-alt"></i> Pages</h3><div id="pagesContainer"></div>
-          <button type="button" id="addPageBtn" class="btn-secondary"><i class="fas fa-plus"></i> Add Page</button>
-          <div class="publish-options"><label class="checkbox-label"><input type="checkbox" id="isPublished"> <i class="fas fa-globe"></i> Publish now</label><div class="form-group"><label><i class="fas fa-calendar"></i> Schedule (optional)</label><input type="datetime-local" id="scheduledPublish"></div></div>
-          <div class="editor-actions"><button type="submit" class="btn-primary"><i class="fas fa-save"></i> Save Book</button><button type="button" id="cancelEditBtn" class="btn-outline"><i class="fas fa-times"></i> Cancel</button></div>
-        </form>
-      </div>
-
-      <!-- READER VIEW -->
-      <div id="readerView" class="container reading-container hidden">
-        <div class="book-header"><h1 id="readerTitle"></h1><p><i class="fas fa-user"></i> By <span id="readerAuthor"></span> · <span id="readerCountry"></span></p></div>
-        <div class="page-navigation"><button id="prevPageBtn" class="btn-outline" disabled><i class="fas fa-chevron-left"></i> Previous</button><span id="pageIndicator">Page 1 of 1</span><button id="nextPageBtn" class="btn-outline" disabled>Next <i class="fas fa-chevron-right"></i></button></div>
-        <div class="page-content-card"><div id="pageContent" class="page-content"></div></div>
-        <div class="reading-actions"><button id="downloadPdfBtn" class="btn-primary"><i class="fas fa-download"></i> Download PDF</button></div>
-        <div class="stat-card" style="margin-top: 2rem;">
-          <h3><i class="fas fa-chart-simple"></i> Book Statistics</h3>
-          <div class="view-stats"><div><i class="fas fa-eye"></i> <span id="bookViewCount">0</span> Views</div><div><i class="fas fa-download"></i> <span id="bookDownloadCount">0</span> Downloads</div></div>
-          <div id="bookCountryStats"></div>
-        </div>
-      </div>
+<div id="app">
+  <!-- Setup View -->
+  <div id="setupView" class="setup-container">
+    <div class="setup-card">
+      <h1 style="font-size: 2.5rem;">📚 BookWriter Pro</h1>
+      <p style="margin: 0.5rem 0 1.5rem;"><i class="fas fa-globe"></i> Unlimited Boost · No Quota Errors</p>
+      <form id="setupForm">
+        <div class="form-group"><label><i class="fas fa-user"></i> Username</label><input type="text" id="setupUsername" placeholder="e.g., Jenish Subedi" required></div>
+        <div class="form-group"><label><i class="fas fa-flag"></i> Country</label><select id="setupCountry"></select></div>
+        <button type="submit" class="btn-primary" style="width:100%">Enter Platform</button>
+      </form>
+      <p style="margin-top: 1.2rem; font-size: 0.85rem;">⚡ Admin: <strong>Jenish Subedi</strong> · Boost 1K, 10K, 50K+ instantly</p>
     </div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  
-  <script>
-    // ==================== STORAGE KEYS ====================
-    const STORAGE = {
-      USERS: 'bw_users_v2',
-      BOOKS: 'bw_books_v2',
-      ANALYTICS: 'bw_analytics_v2',
-      CURRENT_USER: 'bw_current_user_v2',
-      VIEWED_BOOKS: 'bw_viewed_books'
+  <!-- Main Layout -->
+  <div id="mainLayout" class="hidden">
+    <nav class="navbar">
+      <div class="nav-brand"><i class="fas fa-feather-alt"></i> BookWriter Pro</div>
+      <div class="nav-links">
+        <a id="navLibrary"><i class="fas fa-compass"></i> Explore</a>
+        <a id="navDashboard"><i class="fas fa-pen-fancy"></i> My Books</a>
+        <a id="navAnalytics"><i class="fas fa-chart-line"></i> Analytics</a>
+        <a id="navAdmin" class="hidden"><i class="fas fa-crown"></i> Admin Panel</a>
+      </div>
+      <div class="user-badge">
+        <span id="currentUsername"></span>
+        <span id="userFlag" class="fi"></span>
+        <button id="changeUserBtn"><i class="fas fa-sign-out-alt"></i> Exit</button>
+      </div>
+    </nav>
+
+    <div id="dashboardView" class="container hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;"><h1><i class="fas fa-book"></i> My Library</h1><button id="createBookBtn" class="btn-primary"><i class="fas fa-plus"></i> New Book</button></div>
+      <div class="search-box" style="margin: 1rem 0;"><input type="text" id="bookSearch" placeholder="🔍 Search by title..."></div>
+      <div id="booksList" class="books-grid"></div>
+    </div>
+
+    <div id="libraryView" class="container hidden">
+      <h1><i class="fas fa-globe"></i> Discover Books</h1>
+      <div class="search-box"><input type="text" id="librarySearch" placeholder="🔍 Search books or authors..."></div>
+      <div id="libraryBooks" class="books-grid"></div>
+    </div>
+
+    <div id="analyticsView" class="container hidden">
+      <h1><i class="fas fa-chart-simple"></i> Your Stats</h1>
+      <div class="analytics-grid">
+        <div class="analytics-card"><i class="fas fa-eye"></i><h3 id="totalViews">0</h3><p>Total Views</p></div>
+        <div class="analytics-card"><i class="fas fa-download"></i><h3 id="totalDownloads">0</h3><p>Downloads</p></div>
+        <div class="analytics-card"><i class="fas fa-book-open"></i><h3 id="totalBooks">0</h3><p>Published</p></div>
+        <div class="analytics-card"><i class="fas fa-map-marker-alt"></i><h3 id="uniqueCountries">0</h3><p>Countries</p></div>
+      </div>
+      <div class="stat-card" style="background: white; border-radius: 28px; padding: 1.5rem;"><h3><i class="fas fa-chart-pie"></i> Views by Country</h3><div id="countryStats"></div></div>
+    </div>
+
+    <div id="adminView" class="container hidden">
+      <div class="admin-section">
+        <h1><i class="fas fa-shield-alt"></i> Admin Control Room</h1>
+        <p>🔥 Boost views & downloads instantly — no limits, no quota errors</p>
+      </div>
+      <div class="analytics-grid">
+        <div class="analytics-card"><i class="fas fa-users"></i><h3 id="adminTotalUsers">0</h3><p>Users</p></div>
+        <div class="analytics-card"><i class="fas fa-book"></i><h3 id="adminTotalBooks">0</h3><p>Total Books</p></div>
+        <div class="analytics-card"><i class="fas fa-eye"></i><h3 id="adminTotalViews">0</h3><p>Global Views</p></div>
+        <div class="analytics-card"><i class="fas fa-download"></i><h3 id="adminTotalDownloads">0</h3><p>Global Downloads</p></div>
+      </div>
+
+      <div class="boost-panel">
+        <h2><i class="fas fa-rocket" style="color: var(--primary);"></i> 🚀 Instant View Booster</h2>
+        <div id="boostViewPanel"></div>
+      </div>
+
+      <div class="boost-panel">
+        <h2><i class="fas fa-download" style="color: var(--secondary);"></i> 📥 Boost Downloads</h2>
+        <div id="boostDownloadPanel"></div>
+      </div>
+
+      <div class="stat-card" style="margin-top: 1.5rem;"><h3>🏆 Top Performing Books</h3><div id="adminTopBooks"></div></div>
+    </div>
+
+    <div id="editorView" class="container hidden">
+      <form id="bookForm">
+        <div class="form-group"><label>📖 Title</label><input id="bookTitle" required></div>
+        <div id="pagesContainer"></div>
+        <button type="button" id="addPageBtn" class="btn-outline"><i class="fas fa-plus"></i> Add Page</button>
+        <div style="margin: 1rem 0;"><label><input type="checkbox" id="isPublished"> ✅ Publish now</label></div>
+        <button type="submit" class="btn-primary"><i class="fas fa-save"></i> Save Book</button>
+        <button type="button" id="cancelEditBtn" class="btn-outline">Cancel</button>
+      </form>
+    </div>
+
+    <div id="readerView" class="container hidden">
+      <div class="book-header"><h1 id="readerTitle"></h1><p>✍️ <span id="readerAuthor"></span> · <span id="readerCountry"></span></p></div>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin: 1rem 0;"><button id="prevPageBtn" class="btn-outline"><i class="fas fa-chevron-left"></i> Prev</button><span id="pageIndicator" style="font-weight: bold;"></span><button id="nextPageBtn" class="btn-outline">Next <i class="fas fa-chevron-right"></i></button></div>
+      <div class="page-content-card" style="background: white; border-radius: 28px; padding: 2rem; min-height: 350px;"><div id="pageContent"></div></div>
+      <button id="downloadPdfBtn" class="btn-primary" style="margin: 1rem 0;"><i class="fas fa-file-pdf"></i> Download PDF</button>
+      <div class="stat-card" style="background: white;"><h3>📊 Real-time Stats</h3><div><i class="fas fa-eye"></i> <span id="bookViewCount">0</span> Views · <i class="fas fa-download"></i> <span id="bookDownloadCount">0</span> Downloads</div><div id="bookCountryStats"></div></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+  // ==================== STORAGE (NEW AGGREGATED SCHEMA - NO QUOTA ISSUES) ====================
+  const STORAGE = { USERS: 'bw_users', BOOKS: 'bw_books', ANALYTICS: 'bw_analytics_v3', CURRENT_USER: 'bw_current' };
+  const countries = [
+    { code: 'us', name: 'United States' }, { code: 'gb', name: 'United Kingdom' }, { code: 'in', name: 'India' }, { code: 'np', name: 'Nepal' },
+    { code: 'ca', name: 'Canada' }, { code: 'au', name: 'Australia' }, { code: 'de', name: 'Germany' }, { code: 'fr', name: 'France' },
+    { code: 'jp', name: 'Japan' }, { code: 'br', name: 'Brazil' }, { code: 'cn', name: 'China' }, { code: 'ru', name: 'Russia' }
+  ];
+
+  // Migration from old array-based analytics to new aggregated format
+  function migrateAnalytics() {
+    const oldAnalytics = localStorage.getItem('bw_analytics');
+    if (oldAnalytics && !localStorage.getItem(STORAGE.ANALYTICS)) {
+      try {
+        const old = JSON.parse(oldAnalytics);
+        const newAnalytics = { views: {}, downloads: {} };
+        // Migrate views
+        if (old.views) {
+          for (let [bookId, arr] of Object.entries(old.views)) {
+            if (Array.isArray(arr)) {
+              const total = arr.length;
+              const countries = {};
+              arr.forEach(v => { countries[v.userCountry] = (countries[v.userCountry] || 0) + 1; });
+              newAnalytics.views[bookId] = { total, countries };
+            }
+          }
+        }
+        if (old.downloads) {
+          for (let [bookId, arr] of Object.entries(old.downloads)) {
+            if (Array.isArray(arr)) {
+              const total = arr.length;
+              const countries = {};
+              arr.forEach(v => { countries[v.userCountry] = (countries[v.userCountry] || 0) + 1; });
+              newAnalytics.downloads[bookId] = { total, countries };
+            }
+          }
+        }
+        localStorage.setItem(STORAGE.ANALYTICS, JSON.stringify(newAnalytics));
+        // optionally keep old as backup but not needed
+      } catch(e) { console.warn(e); }
+    }
+  }
+
+  function getAnalytics() {
+    migrateAnalytics();
+    return JSON.parse(localStorage.getItem(STORAGE.ANALYTICS) || '{"views":{},"downloads":{}}');
+  }
+  function saveAnalytics(a) { localStorage.setItem(STORAGE.ANALYTICS, JSON.stringify(a)); }
+
+  function getUsers() { return JSON.parse(localStorage.getItem(STORAGE.USERS) || '{}'); }
+  function saveUsers(u) { localStorage.setItem(STORAGE.USERS, JSON.stringify(u)); }
+  function getBooks() { return JSON.parse(localStorage.getItem(STORAGE.BOOKS) || '[]'); }
+  function saveBooks(b) { localStorage.setItem(STORAGE.BOOKS, JSON.stringify(b)); }
+
+  function formatNumber(n) {
+    if (n < 1000) return n.toString();
+    if (n < 1e6) return (n/1000).toFixed(1).replace(/\.0$/,'') + 'K';
+    if (n < 1e9) return (n/1e6).toFixed(1).replace(/\.0$/,'') + 'M';
+    return (n/1e9).toFixed(1).replace(/\.0$/,'') + 'B';
+  }
+
+  function getBookStats(bookId) {
+    const a = getAnalytics();
+    const views = a.views[bookId] || { total: 0, countries: {} };
+    const downloads = a.downloads[bookId] || { total: 0, countries: {} };
+    return { viewCount: views.total, downloadCount: downloads.total, countryStats: views.countries };
+  }
+
+  // ========== UNLIMITED INJECTION (AGGREGATED - NO QUOTA) ==========
+  function injectAggregated(bookId, country, count, type) {
+    let analytics = getAnalytics();
+    const key = type === 'view' ? 'views' : 'downloads';
+    if (!analytics[key][bookId]) analytics[key][bookId] = { total: 0, countries: {} };
+    const entry = analytics[key][bookId];
+    entry.total += count;
+    if (!entry.countries[country]) entry.countries[country] = 0;
+    entry.countries[country] += count;
+    saveAnalytics(analytics);
+  }
+
+  let currentUser = JSON.parse(localStorage.getItem(STORAGE.CURRENT_USER));
+  let currentBookId = null, currentBookData = null, currentPageIndex = 0;
+  const ADMIN_USERNAME = 'Jenish Subedi';
+
+  function trackView(bookId, userId, userCountry) {
+    if (sessionStorage.getItem(`view_${bookId}`)) return;
+    let analytics = getAnalytics();
+    if (!analytics.views[bookId]) analytics.views[bookId] = { total: 0, countries: {} };
+    analytics.views[bookId].total += 1;
+    analytics.views[bookId].countries[userCountry] = (analytics.views[bookId].countries[userCountry] || 0) + 1;
+    saveAnalytics(analytics);
+    sessionStorage.setItem(`view_${bookId}`, '1');
+  }
+
+  function trackDownload(bookId, userId, userCountry) {
+    let analytics = getAnalytics();
+    if (!analytics.downloads[bookId]) analytics.downloads[bookId] = { total: 0, countries: {} };
+    analytics.downloads[bookId].total += 1;
+    analytics.downloads[bookId].countries[userCountry] = (analytics.downloads[bookId].countries[userCountry] || 0) + 1;
+    saveAnalytics(analytics);
+  }
+
+  // UI Navigation
+  const viewElements = {
+    setup: document.getElementById('setupView'), main: document.getElementById('mainLayout'),
+    dashboard: document.getElementById('dashboardView'), library: document.getElementById('libraryView'),
+    analytics: document.getElementById('analyticsView'), admin: document.getElementById('adminView'),
+    editor: document.getElementById('editorView'), reader: document.getElementById('readerView')
+  };
+  function showView(name) {
+    Object.values(viewElements).forEach(v => v.classList.add('hidden'));
+    if (name === 'setup') viewElements.setup.classList.remove('hidden');
+    else {
+      viewElements.main.classList.remove('hidden');
+      if (name === 'dashboard') viewElements.dashboard.classList.remove('hidden');
+      else if (name === 'library') viewElements.library.classList.remove('hidden');
+      else if (name === 'analytics') viewElements.analytics.classList.remove('hidden');
+      else if (name === 'admin') viewElements.admin.classList.remove('hidden');
+      else if (name === 'editor') viewElements.editor.classList.remove('hidden');
+      else if (name === 'reader') viewElements.reader.classList.remove('hidden');
+    }
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    if (name === 'library') document.getElementById('navLibrary')?.classList.add('active');
+    if (name === 'dashboard') document.getElementById('navDashboard')?.classList.add('active');
+    if (name === 'analytics') document.getElementById('navAnalytics')?.classList.add('active');
+    if (name === 'admin') document.getElementById('navAdmin')?.classList.add('active');
+  }
+
+  // Dashboard
+  function loadDashboard() {
+    const container = document.getElementById('booksList');
+    const search = document.getElementById('bookSearch');
+    let myBooks = getBooks().filter(b => b.authorId === currentUser.userId);
+    function render(list) {
+      if (!list.length) { container.innerHTML = '<p style="text-align:center;">📭 No books yet. Create your first book!</p>'; return; }
+      container.innerHTML = list.map(book => {
+        const s = getBookStats(book.id);
+        return `<div class="book-card"><h3>${escapeHtml(book.title)}</h3><div class="stats-badge"><span><i class="fas fa-eye"></i> ${formatNumber(s.viewCount)}</span><span><i class="fas fa-download"></i> ${formatNumber(s.downloadCount)}</span></div><div class="status ${book.isPublished ? 'published' : 'draft'}">${book.isPublished ? '📢 Published' : '📝 Draft'}</div><div><button class="edit-btn" data-id="${book.id}" class="btn-outline">✏️ Edit</button> <button class="read-btn" data-id="${book.id}" class="btn-outline">📖 Read</button> <button class="delete-btn" data-id="${book.id}" class="btn-danger">🗑️ Delete</button></div></div>`;
+      }).join('');
+      document.querySelectorAll('.edit-btn').forEach(btn => btn.addEventListener('click', () => { currentBookId = btn.dataset.id; window.location.hash = 'editor'; showView('editor'); loadEditor(currentBookId); }));
+      document.querySelectorAll('.read-btn').forEach(btn => btn.addEventListener('click', () => { currentBookId = btn.dataset.id; window.location.hash = 'reader'; showView('reader'); loadReader(currentBookId); }));
+      document.querySelectorAll('.delete-btn').forEach(btn => btn.addEventListener('click', () => { if(confirm('Delete this book?')){ let books = getBooks(); books = books.filter(b => b.id !== btn.dataset.id); saveBooks(books); loadDashboard(); } }));
+    }
+    render(myBooks);
+    search.oninput = e => render(myBooks.filter(b => b.title.toLowerCase().includes(e.target.value.toLowerCase())));
+  }
+
+  // Library
+  function loadLibrary() {
+    const container = document.getElementById('libraryBooks');
+    const search = document.getElementById('librarySearch');
+    let published = getBooks().filter(b => b.isPublished);
+    function render(list) {
+      if (!list.length) { container.innerHTML = '<p>📚 No published books yet.</p>'; return; }
+      container.innerHTML = list.map(book => {
+        const s = getBookStats(book.id);
+        return `<div class="book-card"><h3>${escapeHtml(book.title)}</h3><div class="meta"><span class="fi fi-${book.authorCountry}"></span> ${escapeHtml(book.authorName)}</div><div class="stats-badge"><span><i class="fas fa-eye"></i> ${formatNumber(s.viewCount)}</span><span><i class="fas fa-download"></i> ${formatNumber(s.downloadCount)}</span></div><button class="read-btn" data-id="${book.id}" class="btn-primary" style="background:var(--gradient); width:100%;">Read Now</button></div>`;
+      }).join('');
+      document.querySelectorAll('.read-btn').forEach(btn => btn.addEventListener('click', () => { currentBookId = btn.dataset.id; window.location.hash = 'reader'; showView('reader'); loadReader(currentBookId); }));
+    }
+    render(published);
+    search.oninput = e => render(published.filter(b => b.title.toLowerCase().includes(e.target.value.toLowerCase()) || b.authorName.toLowerCase().includes(e.target.value.toLowerCase())));
+  }
+
+  // Analytics
+  function loadAnalytics() {
+    const myBooks = getBooks().filter(b => b.authorId === currentUser.userId);
+    let totalViews = 0, totalDownloads = 0, countryStats = {};
+    myBooks.forEach(b => {
+      const s = getBookStats(b.id);
+      totalViews += s.viewCount;
+      totalDownloads += s.downloadCount;
+      Object.entries(s.countryStats).forEach(([cc, c]) => countryStats[cc] = (countryStats[cc] || 0) + c);
+    });
+    document.getElementById('totalViews').innerHTML = formatNumber(totalViews);
+    document.getElementById('totalDownloads').innerHTML = formatNumber(totalDownloads);
+    document.getElementById('totalBooks').innerHTML = myBooks.filter(b => b.isPublished).length;
+    document.getElementById('uniqueCountries').innerHTML = Object.keys(countryStats).length;
+    const countryDiv = document.getElementById('countryStats');
+    countryDiv.innerHTML = Object.entries(countryStats).map(([cc, c]) => `<div><span class="fi fi-${cc}"></span> ${countries.find(cn=>cn.code===cc)?.name||cc}: ${formatNumber(c)}</div>`).join('') || 'No data';
+  }
+
+  // Admin with PRESETS (1K to 10K and 50K) - instant injection, no progress bar needed because it's instant
+  function loadAdmin() {
+    if (currentUser?.username !== ADMIN_USERNAME) return;
+    const users = getUsers(); const books = getBooks();
+    let totalViews = 0, totalDownloads = 0;
+    books.forEach(b => { const s = getBookStats(b.id); totalViews += s.viewCount; totalDownloads += s.downloadCount; });
+    document.getElementById('adminTotalUsers').innerText = Object.keys(users).length;
+    document.getElementById('adminTotalBooks').innerText = books.length;
+    document.getElementById('adminTotalViews').innerText = formatNumber(totalViews);
+    document.getElementById('adminTotalDownloads').innerText = formatNumber(totalDownloads);
+    const topDiv = document.getElementById('adminTopBooks');
+    topDiv.innerHTML = books.sort((a,b)=>getBookStats(b.id).viewCount - getBookStats(a.id).viewCount).slice(0,5).map(b => `<div style="padding:0.5rem; border-bottom:1px solid #e9d5ff;"><span class="fi fi-${b.authorCountry}"></span> <strong>${escapeHtml(b.title)}</strong> — ${formatNumber(getBookStats(b.id).viewCount)} views</div>`).join('');
+
+    // View Booster UI
+    const viewPanel = document.getElementById('boostViewPanel');
+    viewPanel.innerHTML = `
+      <div class="inject-box">
+        <div class="form-group"><label><i class="fas fa-book"></i> Select Book</label><select id="boostViewBook">${books.map(b=>`<option value="${b.id}">${escapeHtml(b.title)} (by ${escapeHtml(b.authorName)})</option>`).join('')}</select></div>
+        <div class="form-group"><label><i class="fas fa-map-marker-alt"></i> Country</label><select id="boostViewCountry">${countries.map(c=>`<option value="${c.code}">${c.name}</option>`).join('')}</select></div>
+        <div><label>🔥 Boost Amount</label><div class="preset-buttons" id="viewPresetButtons"></div></div>
+        <div class="form-group"><label>Or custom number</label><input type="number" id="customViewCount" placeholder="e.g., 250000" value="1000"></div>
+        <button id="execViewBoost" class="btn-primary" style="width:100%; margin-top:0.5rem;"><i class="fas fa-bolt"></i> Boost Views Now</button>
+      </div>
+    `;
+    const presetContainer = document.getElementById('viewPresetButtons');
+    const presets = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 50000];
+    presetContainer.innerHTML = presets.map(val => `<button class="preset-btn" data-val="${val}">${val >= 1000 ? (val/1000)+'K' : val}</button>`).join('');
+    document.querySelectorAll('#viewPresetButtons .preset-btn').forEach(btn => {
+      btn.addEventListener('click', () => { document.getElementById('customViewCount').value = btn.dataset.val; });
+    });
+
+    // Downloads Booster UI
+    const dlPanel = document.getElementById('boostDownloadPanel');
+    dlPanel.innerHTML = `
+      <div class="inject-box">
+        <div class="form-group"><label>Select Book</label><select id="boostDownloadBook">${books.map(b=>`<option value="${b.id}">${escapeHtml(b.title)}</option>`).join('')}</select></div>
+        <div class="form-group"><label>Country</label><select id="boostDownloadCountry">${countries.map(c=>`<option value="${c.code}">${c.name}</option>`).join('')}</select></div>
+        <div class="preset-buttons" id="dlPresetButtons"></div>
+        <div class="form-group"><label>Custom count</label><input type="number" id="customDownloadCount" value="1000"></div>
+        <button id="execDownloadBoost" class="btn-primary"><i class="fas fa-download"></i> Boost Downloads</button>
+      </div>
+    `;
+    const dlPresetContainer = document.getElementById('dlPresetButtons');
+    dlPresetContainer.innerHTML = presets.map(val => `<button class="preset-btn" data-val="${val}">${val >= 1000 ? (val/1000)+'K' : val}</button>`).join('');
+    document.querySelectorAll('#dlPresetButtons .preset-btn').forEach(btn => {
+      btn.addEventListener('click', () => { document.getElementById('customDownloadCount').value = btn.dataset.val; });
+    });
+
+    // Boost Views (instant, no quota error)
+    document.getElementById('execViewBoost')?.addEventListener('click', () => {
+      const bookId = document.getElementById('boostViewBook').value;
+      const country = document.getElementById('boostViewCountry').value;
+      let count = parseInt(document.getElementById('customViewCount').value, 10);
+      if (isNaN(count) || count < 1) count = 1000;
+      injectAggregated(bookId, country, count, 'view');
+      showToast(`✅ Added ${count.toLocaleString()} views!`);
+      loadAdmin(); loadAnalytics(); loadDashboard(); loadLibrary();
+    });
+
+    // Boost Downloads
+    document.getElementById('execDownloadBoost')?.addEventListener('click', () => {
+      const bookId = document.getElementById('boostDownloadBook').value;
+      const country = document.getElementById('boostDownloadCountry').value;
+      let count = parseInt(document.getElementById('customDownloadCount').value, 10);
+      if (isNaN(count) || count < 1) count = 1000;
+      injectAggregated(bookId, country, count, 'download');
+      showToast(`✅ Added ${count.toLocaleString()} downloads!`);
+      loadAdmin(); loadAnalytics(); loadDashboard(); loadLibrary();
+    });
+  }
+
+  function showToast(msg) {
+    const toast = document.createElement('div');
+    toast.className = 'toast-success';
+    toast.innerText = msg;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 3000);
+  }
+
+  // Editor
+  function loadEditor(bookId) {
+    const book = getBooks().find(b => b.id === bookId);
+    if (!book) return;
+    currentBookData = JSON.parse(JSON.stringify(book));
+    document.getElementById('bookTitle').value = currentBookData.title;
+    document.getElementById('isPublished').checked = currentBookData.isPublished;
+    renderPages();
+  }
+  function renderPages() {
+    const container = document.getElementById('pagesContainer');
+    container.innerHTML = currentBookData.pages.map((p,i) => `<div style="margin-bottom:1rem;"><label>Page ${i+1}</label><textarea class="page-textarea" style="width:100%; height:120px; border-radius:20px; padding:0.8rem;">${escapeHtml(p.content)}</textarea>${currentBookData.pages.length>1 ? '<button type="button" class="remove-page" style="margin-top:0.5rem;">Remove</button>' : ''}</div>`).join('');
+    document.querySelectorAll('.remove-page').forEach(btn => btn.addEventListener('click', (e) => { const idx = Array.from(btn.closest('div').parentNode.children).indexOf(btn.closest('div')); currentBookData.pages.splice(idx,1); renderPages(); }));
+  }
+  document.getElementById('addPageBtn').addEventListener('click', () => { currentBookData.pages.push({ content: '' }); renderPages(); });
+  document.getElementById('bookForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const newPages = Array.from(document.querySelectorAll('.page-textarea')).map(ta => ({ content: ta.value }));
+    const books = getBooks();
+    const idx = books.findIndex(b => b.id === currentBookData.id);
+    if (idx !== -1) {
+      books[idx] = { ...currentBookData, title: document.getElementById('bookTitle').value, pages: newPages, isPublished: document.getElementById('isPublished').checked, updatedAt: new Date().toISOString() };
+      saveBooks(books);
+      showToast('✅ Book saved!');
+      window.location.hash = 'dashboard';
+      showView('dashboard'); loadDashboard();
+    }
+  });
+  document.getElementById('cancelEditBtn').addEventListener('click', () => { window.location.hash = 'dashboard'; showView('dashboard'); loadDashboard(); });
+
+  // Reader
+  function loadReader(bookId) {
+    const book = getBooks().find(b => b.id === bookId);
+    if (!book) return;
+    currentBookData = book;
+    trackView(bookId, currentUser.userId, currentUser.country);
+    document.getElementById('readerTitle').innerText = book.title;
+    document.getElementById('readerAuthor').innerText = book.authorName;
+    document.getElementById('readerCountry').innerHTML = `<span class="fi fi-${book.authorCountry}"></span> ${countries.find(c=>c.code===book.authorCountry)?.name||book.authorCountry}`;
+    currentPageIndex = 0;
+    updateReaderPage();
+    refreshReaderStats();
+  }
+  function updateReaderPage() {
+    document.getElementById('pageContent').innerText = currentBookData.pages[currentPageIndex]?.content || '(Empty)';
+    document.getElementById('pageIndicator').innerText = `Page ${currentPageIndex+1} of ${currentBookData.pages.length}`;
+    document.getElementById('prevPageBtn').disabled = currentPageIndex === 0;
+    document.getElementById('nextPageBtn').disabled = currentPageIndex === currentBookData.pages.length-1;
+  }
+  function refreshReaderStats() {
+    const s = getBookStats(currentBookData.id);
+    document.getElementById('bookViewCount').innerText = formatNumber(s.viewCount);
+    document.getElementById('bookDownloadCount').innerText = formatNumber(s.downloadCount);
+    const container = document.getElementById('bookCountryStats');
+    container.innerHTML = '<h4>📊 Views by Country</h4>' + Object.entries(s.countryStats).map(([cc,c]) => `<div><span class="fi fi-${cc}"></span> ${countries.find(cn=>cn.code===cc)?.name||cc}: ${formatNumber(c)}</div>`).join('');
+  }
+  document.getElementById('prevPageBtn').addEventListener('click', () => { if(currentPageIndex>0){ currentPageIndex--; updateReaderPage(); } });
+  document.getElementById('nextPageBtn').addEventListener('click', () => { if(currentPageIndex<currentBookData.pages.length-1){ currentPageIndex++; updateReaderPage(); } });
+  document.getElementById('downloadPdfBtn').addEventListener('click', () => {
+    trackDownload(currentBookData.id, currentUser.userId, currentUser.country);
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    currentBookData.pages.forEach((p,i) => { if(i>0) doc.addPage(); doc.text(p.content || ' ', 15, 20, { maxWidth: 180 }); doc.text(`Page ${i+1}`, 190, 285, { align: 'right' }); });
+    doc.save(`${currentBookData.title}.pdf`);
+    setTimeout(refreshReaderStats, 200);
+  });
+
+  // Setup
+  const setupCountry = document.getElementById('setupCountry');
+  countries.forEach(c => { let opt = document.createElement('option'); opt.value = c.code; opt.textContent = c.name; setupCountry.appendChild(opt); });
+  document.getElementById('setupForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const username = document.getElementById('setupUsername').value.trim();
+    const country = document.getElementById('setupCountry').value;
+    if (username.length < 3) return alert('Username too short');
+    let users = getUsers();
+    let userId = Object.keys(users).find(id => users[id].username === username);
+    if (!userId) { userId = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2,6); users[userId] = { username, country, createdAt: new Date().toISOString() }; saveUsers(users); }
+    else { users[userId].country = country; saveUsers(users); }
+    currentUser = { userId, username, country };
+    localStorage.setItem(STORAGE.CURRENT_USER, JSON.stringify(currentUser));
+    initialize();
+  });
+  document.getElementById('changeUserBtn').addEventListener('click', () => { localStorage.removeItem(STORAGE.CURRENT_USER); sessionStorage.clear(); currentUser = null; window.location.hash = ''; showView('setup'); });
+  document.getElementById('navLibrary').addEventListener('click', () => { window.location.hash = 'library'; showView('library'); loadLibrary(); });
+  document.getElementById('navDashboard').addEventListener('click', () => { window.location.hash = 'dashboard'; showView('dashboard'); loadDashboard(); });
+  document.getElementById('navAnalytics').addEventListener('click', () => { window.location.hash = 'analytics'; showView('analytics'); loadAnalytics(); });
+  document.getElementById('navAdmin').addEventListener('click', () => { if(currentUser?.username === ADMIN_USERNAME){ window.location.hash = 'admin'; showView('admin'); loadAdmin(); } });
+  document.getElementById('createBookBtn').addEventListener('click', () => {
+    const title = prompt('Enter book title:');
+    if (!title) return;
+    const newBook = {
+      id: 'book_' + Date.now() + '_' + Math.random().toString(36).substr(2,6),
+      title, authorId: currentUser.userId, authorName: currentUser.username, authorCountry: currentUser.country,
+      pages: [{ content: 'Start writing your masterpiece...' }], isPublished: false, createdAt: new Date().toISOString(), updatedAt: new Date().toISOString()
     };
+    let books = getBooks(); books.push(newBook); saveBooks(books);
+    currentBookId = newBook.id;
+    window.location.hash = 'editor'; showView('editor'); loadEditor(currentBookId);
+  });
 
-    // ==================== COUNTRY LIST ====================
-    const countries = [
-      { code: 'us', name: 'United States' }, { code: 'gb', name: 'United Kingdom' },
-      { code: 'in', name: 'India' }, { code: 'np', name: 'Nepal' },
-      { code: 'ca', name: 'Canada' }, { code: 'au', name: 'Australia' },
-      { code: 'de', name: 'Germany' }, { code: 'fr', name: 'France' },
-      { code: 'jp', name: 'Japan' }, { code: 'br', name: 'Brazil' },
-      { code: 'cn', name: 'China' }, { code: 'ru', name: 'Russia' },
-      { code: 'za', name: 'South Africa' }, { code: 'mx', name: 'Mexico' },
-      { code: 'it', name: 'Italy' }, { code: 'es', name: 'Spain' },
-      { code: 'kr', name: 'South Korea' }, { code: 'ae', name: 'UAE' },
-      { code: 'sg', name: 'Singapore' }, { code: 'pk', name: 'Pakistan' }
-    ];
-
-    const countrySelect = document.getElementById('setupCountry');
-    countries.forEach(c => { const opt = document.createElement('option'); opt.value = c.code; opt.textContent = c.name; countrySelect.appendChild(opt); });
-
-    // ==================== DATABASE HELPERS ====================
-    function getUsers() { return JSON.parse(localStorage.getItem(STORAGE.USERS)) || {}; }
-    function saveUsers(users) { localStorage.setItem(STORAGE.USERS, JSON.stringify(users)); }
-    function getBooks() { return JSON.parse(localStorage.getItem(STORAGE.BOOKS)) || []; }
-    function saveBooks(books) { localStorage.setItem(STORAGE.BOOKS, JSON.stringify(books)); }
-    function getAnalytics() { return JSON.parse(localStorage.getItem(STORAGE.ANALYTICS)) || { views: {}, downloads: {} }; }
-    function saveAnalytics(analytics) { localStorage.setItem(STORAGE.ANALYTICS, JSON.stringify(analytics)); }
-    function getViewedBooks() { return JSON.parse(localStorage.getItem(STORAGE.VIEWED_BOOKS)) || {}; }
-    function saveViewedBooks(viewed) { localStorage.setItem(STORAGE.VIEWED_BOOKS, JSON.stringify(viewed)); }
-
-    // ==================== STATE ====================
-    let currentUser = JSON.parse(localStorage.getItem(STORAGE.CURRENT_USER)) || null;
-    let currentBookId = null;
-    let currentBookData = null;
-    let currentPageIndex = 0;
-    let viewTracked = false; // Prevent double tracking
-    const ADMIN_USERNAME = 'Jenish Subedi';
-
-    // ==================== VIEW TRACKING (ONCE PER SESSION) ====================
-    function trackView(bookId, userId, userCountry) {
-      // Check if already viewed in this session
-      const sessionKey = `viewed_${bookId}`;
-      if (sessionStorage.getItem(sessionKey)) {
-        console.log('📊 Already viewed in this session - not counting');
-        return false;
-      }
-      
-      let analytics = getAnalytics();
-      if (!analytics.views[bookId]) analytics.views[bookId] = [];
-      
-      // Add view
-      analytics.views[bookId].push({
-        userId, userCountry,
-        timestamp: new Date().toISOString(),
-        device: navigator.userAgent
-      });
-      saveAnalytics(analytics);
-      
-      // Mark as viewed in this session
-      sessionStorage.setItem(sessionKey, 'true');
-      console.log('✅ New view counted!');
-      return true;
-    }
-
-    function trackDownload(bookId, userId, userCountry) {
-      let analytics = getAnalytics();
-      if (!analytics.downloads[bookId]) analytics.downloads[bookId] = [];
-      analytics.downloads[bookId].push({
-        userId, userCountry,
-        timestamp: new Date().toISOString()
-      });
-      saveAnalytics(analytics);
-    }
-
-    function getBookStats(bookId) {
-      const analytics = getAnalytics();
-      const views = analytics.views[bookId] || [];
-      const downloads = analytics.downloads[bookId] || [];
-      
-      const viewCount = views.length;
-      
-      const countryStats = {};
-      views.forEach(v => { countryStats[v.userCountry] = (countryStats[v.userCountry] || 0) + 1; });
-      
-      return { viewCount, downloadCount: downloads.length, countryStats };
-    }
-
-    // ==================== VIEWS ====================
-    const views = {
-      setup: document.getElementById('setupView'),
-      mainLayout: document.getElementById('mainLayout'),
-      dashboard: document.getElementById('dashboardView'),
-      library: document.getElementById('libraryView'),
-      analytics: document.getElementById('analyticsView'),
-      admin: document.getElementById('adminView'),
-      editor: document.getElementById('editorView'),
-      reader: document.getElementById('readerView')
-    };
-
-    function showView(viewName) {
-      Object.values(views).forEach(v => v.classList.add('hidden'));
-      if (viewName === 'setup') views.setup.classList.remove('hidden');
-      else {
-        views.mainLayout.classList.remove('hidden');
-        if (viewName === 'dashboard') views.dashboard.classList.remove('hidden');
-        else if (viewName === 'library') views.library.classList.remove('hidden');
-        else if (viewName === 'analytics') views.analytics.classList.remove('hidden');
-        else if (viewName === 'admin') views.admin.classList.remove('hidden');
-        else if (viewName === 'editor') views.editor.classList.remove('hidden');
-        else if (viewName === 'reader') views.reader.classList.remove('hidden');
-      }
-      document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-      if (viewName === 'library') document.getElementById('navLibrary').classList.add('active');
-      if (viewName === 'dashboard') document.getElementById('navDashboard').classList.add('active');
-      if (viewName === 'analytics') document.getElementById('navAnalytics').classList.add('active');
-      if (viewName === 'admin') document.getElementById('navAdmin').classList.add('active');
-    }
-
-    // ==================== INITIALIZE ====================
-    function initialize() {
-      if (currentUser) {
-        document.getElementById('currentUsername').textContent = currentUser.username;
-        const flagEl = document.getElementById('userFlag');
-        flagEl.className = `fi fi-${currentUser.country}`;
-        if (currentUser.username === ADMIN_USERNAME) document.getElementById('navAdmin').classList.remove('hidden');
-        
-        const hash = window.location.hash.slice(1) || 'library';
-        if (hash === 'editor' && currentBookId) { showView('editor'); loadEditor(currentBookId); }
-        else if (hash === 'reader' && currentBookId) { showView('reader'); loadReader(currentBookId); }
-        else if (hash === 'dashboard') { showView('dashboard'); loadDashboard(); }
-        else if (hash === 'analytics') { showView('analytics'); loadAnalytics(); }
-        else if (hash === 'admin' && currentUser.username === ADMIN_USERNAME) { showView('admin'); loadAdmin(); }
-        else { showView('library'); loadLibrary(); }
-      } else {
-        showView('setup');
-      }
-    }
-
-    // ==================== SETUP ====================
-    document.getElementById('setupForm').addEventListener('submit', (e) => {
-      e.preventDefault();
-      const username = document.getElementById('setupUsername').value.trim();
-      const country = document.getElementById('setupCountry').value;
-      const errEl = document.getElementById('setupError');
-      if (username.length < 3) { errEl.textContent = 'Username must be at least 3 characters'; return; }
-      let users = getUsers();
-      let userId = Object.keys(users).find(id => users[id].username === username);
-      if (!userId) {
-        userId = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5);
-        users[userId] = { username, country, createdAt: new Date().toISOString() };
-        saveUsers(users);
-      } else {
-        users[userId].country = country;
-        saveUsers(users);
-      }
-      currentUser = { userId, username, country };
-      localStorage.setItem(STORAGE.CURRENT_USER, JSON.stringify(currentUser));
-      initialize();
-    });
-
-    document.getElementById('changeUserBtn').addEventListener('click', () => {
-      if (confirm('Change user? Your data is saved.')) {
-        localStorage.removeItem(STORAGE.CURRENT_USER);
-        sessionStorage.clear();
-        currentUser = null;
-        window.location.hash = '';
-        showView('setup');
-      }
-    });
-
-    document.getElementById('navLibrary').addEventListener('click', () => { window.location.hash = 'library'; showView('library'); loadLibrary(); });
-    document.getElementById('navDashboard').addEventListener('click', () => { window.location.hash = 'dashboard'; showView('dashboard'); loadDashboard(); });
-    document.getElementById('navAnalytics').addEventListener('click', () => { window.location.hash = 'analytics'; showView('analytics'); loadAnalytics(); });
-    document.getElementById('navAdmin').addEventListener('click', () => { window.location.hash = 'admin'; showView('admin'); loadAdmin(); });
-
-    // ==================== DASHBOARD ====================
-    function loadDashboard() {
-      const container = document.getElementById('booksList');
-      const searchInput = document.getElementById('bookSearch');
-      let myBooks = getBooks().filter(b => b.authorId === currentUser.userId);
-      
-      function renderBooks(filteredBooks) {
-        if (!filteredBooks.length) { container.innerHTML = '<p style="text-align:center; padding:2rem;"><i class="fas fa-book"></i> No books yet.</p>'; return; }
-        container.innerHTML = filteredBooks.sort((a,b) => new Date(b.updatedAt) - new Date(a.updatedAt)).map(book => {
-          const stats = getBookStats(book.id);
-          return `<div class="book-card fade-in"><h3>${escapeHtml(book.title)}</h3><div class="meta"><i class="fas fa-file-alt"></i> ${book.pages.length} pages</div><div class="stats-badge"><span><i class="fas fa-eye"></i> ${stats.viewCount}</span><span><i class="fas fa-download"></i> ${stats.downloadCount}</span></div><div class="status ${getStatusClass(book)}">${getStatusText(book)}</div><div class="card-actions"><button class="btn-outline edit-btn" data-id="${book.id}"><i class="fas fa-edit"></i> Edit</button><button class="btn-outline read-btn" data-id="${book.id}"><i class="fas fa-book-open"></i> Read</button><button class="btn-danger delete-btn" data-id="${book.id}"><i class="fas fa-trash"></i></button></div></div>`;
-        }).join('');
-        attachBookCardEvents();
-      }
-      
-      renderBooks(myBooks);
-      searchInput.addEventListener('input', (e) => renderBooks(myBooks.filter(b => b.title.toLowerCase().includes(e.target.value.toLowerCase()))));
-    }
-
-    function attachBookCardEvents() {
-      document.querySelectorAll('.edit-btn').forEach(b => b.addEventListener('click', () => { currentBookId = b.dataset.id; window.location.hash = 'editor'; showView('editor'); loadEditor(currentBookId); }));
-      document.querySelectorAll('.read-btn').forEach(b => b.addEventListener('click', () => { currentBookId = b.dataset.id; window.location.hash = 'reader'; showView('reader'); loadReader(currentBookId); }));
-      document.querySelectorAll('.delete-btn').forEach(b => b.addEventListener('click', () => { if (confirm('Delete?')) { saveBooks(getBooks().filter(bk => bk.id !== b.dataset.id)); loadDashboard(); } }));
-    }
-
-    function getStatusClass(book) {
-      if (!book.isPublished) return 'draft';
-      if (book.scheduledPublish && new Date(book.scheduledPublish) > new Date()) return 'scheduled';
-      return 'published';
-    }
-    function getStatusText(book) {
-      if (!book.isPublished) return '📕 Draft';
-      if (book.scheduledPublish && new Date(book.scheduledPublish) > new Date()) return `⏰ ${new Date(book.scheduledPublish).toLocaleString()}`;
-      return '✅ Published';
-    }
-
-    document.getElementById('createBookBtn').addEventListener('click', () => {
-      const title = prompt('Book title:');
-      if (!title) return;
-      const bookId = 'book_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5);
-      const newBook = { id: bookId, title, authorId: currentUser.userId, authorName: currentUser.username, authorCountry: currentUser.country, pages: [{ content: '' }], isPublished: false, scheduledPublish: null, createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() };
-      let books = getBooks(); books.push(newBook); saveBooks(books);
-      currentBookId = bookId; window.location.hash = 'editor'; showView('editor'); loadEditor(bookId);
-    });
-
-    // ==================== LIBRARY ====================
-    function loadLibrary() {
-      const container = document.getElementById('libraryBooks');
-      const searchInput = document.getElementById('librarySearch');
-      const now = new Date();
-      let publishedBooks = getBooks().filter(b => b.isPublished && (!b.scheduledPublish || new Date(b.scheduledPublish) <= now));
-      
-      function renderLibrary(filteredBooks) {
-        if (!filteredBooks.length) { container.innerHTML = '<p style="text-align:center; padding:2rem;">No published books.</p>'; return; }
-        container.innerHTML = filteredBooks.sort((a,b) => new Date(b.updatedAt) - new Date(a.updatedAt)).map(book => {
-          const stats = getBookStats(book.id);
-          return `<div class="book-card fade-in"><h3>${escapeHtml(book.title)}</h3><div class="meta"><span class="fi fi-${book.authorCountry}" style="width:1.2rem;"></span> ${escapeHtml(book.authorName)} · ${book.pages.length} pages</div><div class="stats-badge"><span><i class="fas fa-eye"></i> ${stats.viewCount}</span><span><i class="fas fa-download"></i> ${stats.downloadCount}</span></div><button class="btn-primary read-btn" data-id="${book.id}" style="width:100%;"><i class="fas fa-book-open"></i> Read Now</button></div>`;
-        }).join('');
-        document.querySelectorAll('.read-btn').forEach(b => b.addEventListener('click', () => { currentBookId = b.dataset.id; window.location.hash = 'reader'; showView('reader'); loadReader(currentBookId); }));
-      }
-      
-      renderLibrary(publishedBooks);
-      searchInput.addEventListener('input', (e) => {
-        const term = e.target.value.toLowerCase();
-        renderLibrary(publishedBooks.filter(b => b.title.toLowerCase().includes(term) || b.authorName.toLowerCase().includes(term)));
-      });
-    }
-
-    // ==================== ANALYTICS ====================
-    function loadAnalytics() {
-      const myBooks = getBooks().filter(b => b.authorId === currentUser.userId);
-      let totalViews = 0, totalDownloads = 0;
-      const countryStats = {};
-      
-      myBooks.forEach(book => {
-        const stats = getBookStats(book.id);
-        totalViews += stats.viewCount;
-        totalDownloads += stats.downloadCount;
-        Object.entries(stats.countryStats).forEach(([country, count]) => { countryStats[country] = (countryStats[country] || 0) + count; });
-      });
-      
-      document.getElementById('totalViews').textContent = totalViews;
-      document.getElementById('totalDownloads').textContent = totalDownloads;
-      document.getElementById('totalBooks').textContent = myBooks.filter(b => b.isPublished).length;
-      document.getElementById('uniqueCountries').textContent = Object.keys(countryStats).length;
-      
-      const countryBody = document.getElementById('countryStatsBody');
-      countryBody.innerHTML = Object.entries(countryStats).sort((a,b) => b[1] - a[1]).map(([code, count]) => {
-        const countryName = countries.find(c => c.code === code)?.name || code;
-        return `<tr><td><span class="fi fi-${code}"></span> ${countryName}</td><td>${count}</td><td>-</td></tr>`;
-      }).join('') || '<tr><td colspan="3">No data</td></tr>';
-      
-      const perfDiv = document.getElementById('bookPerformanceList');
-      perfDiv.innerHTML = myBooks.sort((a,b) => getBookStats(b.id).viewCount - getBookStats(a.id).viewCount).slice(0, 5).map(book => {
-        const stats = getBookStats(book.id);
-        return `<div style="display:flex; justify-content:space-between; padding:0.5rem; border-bottom:1px solid var(--border);"><span>${escapeHtml(book.title)}</span><span><i class="fas fa-eye"></i> ${stats.viewCount} · <i class="fas fa-download"></i> ${stats.downloadCount}</span></div>`;
-      }).join('');
-    }
-
-    // ==================== ADMIN ====================
-    function loadAdmin() {
-      const users = getUsers();
-      const books = getBooks();
-      const analytics = getAnalytics();
-      
-      let totalViews = 0, totalDownloads = 0;
-      const countryStats = {};
-      
-      books.forEach(book => {
-        const stats = getBookStats(book.id);
-        totalViews += stats.viewCount;
-        totalDownloads += stats.downloadCount;
-        Object.entries(stats.countryStats).forEach(([country, count]) => { countryStats[country] = (countryStats[country] || 0) + count; });
-      });
-      
-      document.getElementById('adminTotalUsers').textContent = Object.keys(users).length;
-      document.getElementById('adminTotalBooks').textContent = books.length;
-      document.getElementById('adminTotalViews').textContent = totalViews;
-      document.getElementById('adminTotalDownloads').textContent = totalDownloads;
-      
-      const adminCountryBody = document.getElementById('adminCountryBody');
-      adminCountryBody.innerHTML = Object.entries(countryStats).sort((a,b) => b[1] - a[1]).map(([code, count]) => {
-        const countryName = countries.find(c => c.code === code)?.name || code;
-        const usersInCountry = Object.values(users).filter(u => u.country === code).length;
-        const booksInCountry = books.filter(b => b.authorCountry === code).length;
-        return `<tr><td><span class="fi fi-${code}"></span> ${countryName}</td><td>${count}</td><td>${usersInCountry}</td><td>${booksInCountry}</td></tr>`;
-      }).join('');
-      
-      const topBooksDiv = document.getElementById('adminTopBooks');
-      topBooksDiv.innerHTML = books.sort((a,b) => getBookStats(b.id).viewCount - getBookStats(a.id).viewCount).slice(0, 5).map(book => {
-        const stats = getBookStats(book.id);
-        return `<div style="display:flex; justify-content:space-between; padding:0.5rem; border-bottom:1px solid var(--border);"><span><span class="fi fi-${book.authorCountry}"></span> ${escapeHtml(book.title)} by ${escapeHtml(book.authorName)}</span><span><i class="fas fa-eye"></i> ${stats.viewCount}</span></div>`;
-      }).join('');
-      
-      const recentDiv = document.getElementById('recentActivity');
-      const allViews = Object.entries(analytics.views).flatMap(([bookId, arr]) => arr.map(v => ({ ...v, bookId, bookTitle: books.find(b => b.id === bookId)?.title || 'Unknown' })));
-      recentDiv.innerHTML = allViews.sort((a,b) => new Date(b.timestamp) - new Date(a.timestamp)).slice(0, 50).map(v => {
-        const user = users[v.userId];
-        return `<div style="padding:0.3rem; font-size:0.9rem;"><span class="fi fi-${v.userCountry}"></span> ${user?.username || 'Unknown'} viewed "${escapeHtml(v.bookTitle)}" · ${new Date(v.timestamp).toLocaleString()}</div>`;
-      }).join('');
-    }
-
-    // ==================== EDITOR ====================
-    const titleInput = document.getElementById('bookTitle');
-    const pagesContainer = document.getElementById('pagesContainer');
-    const isPublishedCheck = document.getElementById('isPublished');
-    const scheduledInput = document.getElementById('scheduledPublish');
-
-    function loadEditor(bookId) {
-      const book = getBooks().find(b => b.id === bookId);
-      if (!book) { alert('Not found'); window.location.hash = 'dashboard'; showView('dashboard'); loadDashboard(); return; }
-      currentBookData = book;
-      titleInput.value = book.title;
-      isPublishedCheck.checked = book.isPublished;
-      scheduledInput.value = book.scheduledPublish ? new Date(book.scheduledPublish).toISOString().slice(0, 16) : '';
-      renderPages();
-    }
-
-    function renderPages() {
-      pagesContainer.innerHTML = currentBookData.pages.map((page, i) => `<div class="page-editor" data-index="${i}"><label>Page ${i+1}</label><textarea class="page-content-input">${escapeHtml(page.content)}</textarea>${currentBookData.pages.length > 1 ? '<button type="button" class="remove-page">Remove</button>' : ''}</div>`).join('');
-      document.querySelectorAll('.remove-page').forEach(btn => btn.addEventListener('click', (e) => { currentBookData.pages.splice(parseInt(e.target.closest('.page-editor').dataset.index), 1); renderPages(); }));
-    }
-
-    document.getElementById('addPageBtn').addEventListener('click', () => { currentBookData.pages.push({ content: '' }); renderPages(); });
-    document.getElementById('cancelEditBtn').addEventListener('click', () => { window.location.hash = 'dashboard'; showView('dashboard'); loadDashboard(); });
-
-    document.getElementById('bookForm').addEventListener('submit', (e) => {
-      e.preventDefault();
-      const pageContents = Array.from(document.querySelectorAll('.page-content-input')).map(ta => ta.value);
-      let books = getBooks();
-      const index = books.findIndex(b => b.id === currentBookId);
-      if (index !== -1) {
-        books[index] = { ...books[index], title: titleInput.value, pages: pageContents.map(c => ({ content: c })), isPublished: isPublishedCheck.checked, scheduledPublish: scheduledInput.value || null, updatedAt: new Date().toISOString() };
-        saveBooks(books);
-      }
-      alert('✅ Saved!');
-      window.location.hash = 'dashboard'; showView('dashboard'); loadDashboard();
-    });
-
-    // ==================== READER ====================
-    const readerTitle = document.getElementById('readerTitle');
-    const readerAuthor = document.getElementById('readerAuthor');
-    const readerCountry = document.getElementById('readerCountry');
-    const pageContent = document.getElementById('pageContent');
-    const pageIndicator = document.getElementById('pageIndicator');
-    const prevBtn = document.getElementById('prevPageBtn');
-    const nextBtn = document.getElementById('nextPageBtn');
-
-    function loadReader(bookId) {
-      const book = getBooks().find(b => b.id === bookId);
-      if (!book) { alert('Not found'); window.location.hash = 'library'; showView('library'); loadLibrary(); return; }
-      currentBookData = book;
-      
-      // Track view - ONCE per session using sessionStorage
-      trackView(bookId, currentUser.userId, currentUser.country);
-      
-      readerTitle.textContent = book.title;
-      readerAuthor.textContent = book.authorName;
-      readerCountry.innerHTML = `<span class="fi fi-${book.authorCountry}"></span> ${countries.find(c => c.code === book.authorCountry)?.name || book.authorCountry}`;
-      currentPageIndex = 0;
-      updateReaderPage();
-      loadBookStats();
-    }
-
-    function updateReaderPage() {
-      pageContent.textContent = currentBookData.pages[currentPageIndex]?.content || '(Empty)';
-      pageIndicator.textContent = `Page ${currentPageIndex+1} of ${currentBookData.pages.length}`;
-      prevBtn.disabled = currentPageIndex === 0;
-      nextBtn.disabled = currentPageIndex === currentBookData.pages.length - 1;
-    }
-
-    function loadBookStats() {
-      const stats = getBookStats(currentBookData.id);
-      document.getElementById('bookViewCount').textContent = stats.viewCount;
-      document.getElementById('bookDownloadCount').textContent = stats.downloadCount;
-      
-      const countryDiv = document.getElementById('bookCountryStats');
-      countryDiv.innerHTML = '<h4 style="margin:1rem 0 0.5rem;"><i class="fas fa-globe"></i> Views by Country</h4>' +
-        Object.entries(stats.countryStats).sort((a,b) => b[1] - a[1]).map(([code, count]) => {
-          const countryName = countries.find(c => c.code === code)?.name || code;
-          return `<div style="display:flex; align-items:center; gap:0.5rem; padding:0.3rem;"><span class="fi fi-${code}"></span> ${countryName}: ${count} view${count>1?'s':''}</div>`;
-        }).join('');
-    }
-
-    prevBtn.addEventListener('click', () => { if (currentPageIndex > 0) { currentPageIndex--; updateReaderPage(); } });
-    nextBtn.addEventListener('click', () => { if (currentPageIndex < currentBookData.pages.length - 1) { currentPageIndex++; updateReaderPage(); } });
-
-    document.getElementById('downloadPdfBtn').addEventListener('click', () => {
-      trackDownload(currentBookData.id, currentUser.userId, currentUser.country);
-      const { jsPDF } = window.jspdf;
-      const doc = new jsPDF();
-      currentBookData.pages.forEach((page, i) => { if (i > 0) doc.addPage(); doc.setFontSize(12); doc.text(page.content || ' ', 15, 20, { maxWidth: 180 }); doc.setFontSize(10); doc.text(`Page ${i+1}`, 190, 285, { align: 'right' }); });
-      doc.save(`${currentBookData.title}.pdf`);
-      setTimeout(() => loadBookStats(), 100);
-    });
-
-    // ==================== UTILS ====================
-    function escapeHtml(text) { if (!text) return ''; const div = document.createElement('div'); div.textContent = text; return div.innerHTML; }
-
-    // ==================== START ====================
-    window.addEventListener('load', initialize);
-    window.addEventListener('hashchange', initialize);
-  </script>
+  function initialize() {
+    migrateAnalytics(); // ensure old data is migrated once
+    if (currentUser) {
+      document.getElementById('currentUsername').innerText = currentUser.username;
+      document.getElementById('userFlag').className = `fi fi-${currentUser.country}`;
+      if (currentUser.username === ADMIN_USERNAME) document.getElementById('navAdmin').classList.remove('hidden');
+      else document.getElementById('navAdmin').classList.add('hidden');
+      const hash = window.location.hash.slice(1) || 'library';
+      if (hash === 'editor') { showView('editor'); if(currentBookId) loadEditor(currentBookId); else window.location.hash='dashboard'; }
+      else if (hash === 'reader') { if(currentBookId) { showView('reader'); loadReader(currentBookId); } else window.location.hash='library'; }
+      else if (hash === 'dashboard') { showView('dashboard'); loadDashboard(); }
+      else if (hash === 'analytics') { showView('analytics'); loadAnalytics(); }
+      else if (hash === 'admin' && currentUser.username === ADMIN_USERNAME) { showView('admin'); loadAdmin(); }
+      else { showView('library'); loadLibrary(); }
+    } else { showView('setup'); }
+  }
+  function escapeHtml(str) { if(!str) return ''; const div=document.createElement('div'); div.textContent=str; return div.innerHTML; }
+  window.addEventListener('load', initialize);
+  window.addEventListener('hashchange', initialize);
+</script>
 </body>
 </html>
